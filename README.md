@@ -1,9 +1,38 @@
-# KPFui_CodeExam
+# StreetBlock Skeleton Analysis -- A Grasshopper Plugin to evaluate street score for social distancing
 
 
-___KPFui Computational Designer Challenge - Zhenxian Huang___
+___Zhenxian Huang___
 
+___Main Contribution___
+1. A set of components to compute Medial Axis Skeleton(MAS) for street block
+<img src="Pictures/media-axis-gh.png" alt="drawing" width="600"/>
+<img src="Pictures/media-axis.png" alt="drawing" width="600"/>
 
+2. A set of components to simulate circle packing inside a block region
+<img src="Pictures/packing-gh.png" alt="drawing" width="600"/>
+<img src="Pictures/packing.png" alt="drawing" width="600"/>
+
+3. A set of components to evaluate how many people can pass the street at the same time based on the result of circle packing and MAS
+<img src="Pictures/visualization.png" alt="drawing" width="600"/>
+
+___Toolbar Layout___
+1. Distance (Computes shortest distance from any point in a mesh to its boundary)
+<img src="Pictures/distance.png" alt="drawing" width="600"/>
+
+2. Evaluate (Evaluate street score based on distance calculation or circle packing result)
+<img src="Pictures/evaluation.png" alt="drawing" width="600"/>
+
+3. Medial Axis (Computes medial axis of a given mesh, user can choose whether to smoothify the result)
+<img src="Pictures/medial-axis-component.png" alt="drawing" width="600"/>
+
+4. Simulate (Simulates the circle packing algorithm inside a mesh domain)
+<img src="Pictures/simulate.png" alt="drawing" width="600"/>
+
+5. Visualization (Visualizes the domain mesh with color gradient based on the evaluation result)
+<img src="Pictures/visualization-component.png" alt="drawing" width="600"/>
+
+6. Utils (Utility methods to remesh and create pedestrain domain based on curve selection)
+<img src="Pictures/util.png" alt="drawing" width="600"/>
 
 ___Research Questions___
 
@@ -12,8 +41,6 @@ Evaluate the "width" property given domain with the topology of an outside close
 Naturally the "width" problem can be related to a problem of Medial Axis Transform, which gets the skeleton of geometry.Then analysis on either intersection with obstacles or number of related circle packings can be made to imply the attribute across the whole domain.
 
 The scalar field on the domain can be seen as a problem of mapping evaluating positions to the width property of its closest skeleton segment. In order to smooth the field, we can take multiple segments and use the weighted average result.
-
-
 
 ___Tools Used___
 
@@ -28,8 +55,6 @@ Width property of skeleton segments based on ray-mesh intersection(from Rhino.Ge
 Physical System Simulation for Circle Packing Approximation(from KangarooSolver.dll)
 
 RTree search for final calculation of scalar field on a mesh(from Rhino.Geometry.RTree)
-
-
 
 ___WorkFlow___
 
@@ -50,8 +75,6 @@ ___WorkFlow___
 
 6.Visualize Scalar Field Analysis
 	Use a good-quality mesh or directly the sample segments to visualize the result. RTree search is performed to get nearest segments for a sample point at the mesh vertex.
-
-
 
 ___Conclusions___
 
@@ -75,9 +98,4 @@ Possible Solution: Not clear. Maybe write a new intersection function on ray and
 	1. the perpendicular direction of a MAS segment is actually along the path
 	2. the physical simulation not return a full-packed result during collision
 Possible Solution: Expand the search range for each analysis point on the domain and apply anti-aliasing
-
-
-3.Future works
-
----Use vector calculus and PDE for better scalar field generation: 
 
