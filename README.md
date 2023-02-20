@@ -1,4 +1,4 @@
-# StreetBlock Skeleton Analysis -- A Grasshopper Plugin to evaluate street score for social distancing
+# Urban Block Skeleton Analysis -- A Grasshopper Plugin to evaluate street score for social distancing
 
 
 ___Zhenxian Huang___
@@ -34,6 +34,7 @@ ___Toolbar Layout___
 6. Utils (Utility methods to remesh and create pedestrain domain based on curve selection)
 <img src="Pictures/util.png" alt="drawing" width="600"/>
 
+
 ___Research Questions___
 
 Evaluate the "width" property given domain with the topology of an outside closed loop and several inside obstacles. Analyse a scalar field on the domain based on the width property.
@@ -41,6 +42,7 @@ Evaluate the "width" property given domain with the topology of an outside close
 Naturally the "width" problem can be related to a problem of Medial Axis Transform, which gets the skeleton of geometry.Then analysis on either intersection with obstacles or number of related circle packings can be made to imply the attribute across the whole domain.
 
 The scalar field on the domain can be seen as a problem of mapping evaluating positions to the width property of its closest skeleton segment. In order to smooth the field, we can take multiple segments and use the weighted average result.
+
 
 ___Tools Used___
 
@@ -55,6 +57,7 @@ Width property of skeleton segments based on ray-mesh intersection(from Rhino.Ge
 Physical System Simulation for Circle Packing Approximation(from KangarooSolver.dll)
 
 RTree search for final calculation of scalar field on a mesh(from Rhino.Geometry.RTree)
+
 
 ___WorkFlow___
 
@@ -75,6 +78,7 @@ ___WorkFlow___
 
 6.Visualize Scalar Field Analysis
 	Use a good-quality mesh or directly the sample segments to visualize the result. RTree search is performed to get nearest segments for a sample point at the mesh vertex.
+
 
 ___Conclusions___
 
