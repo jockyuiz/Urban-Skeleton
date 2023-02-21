@@ -1,4 +1,4 @@
-# Urban Block Skeleton Analysis -- A Grasshopper Plugin to evaluate street score for social distancing
+# Urban Skeleton -- A Grasshopper Plugin to evaluate street score for social distancing
 
 
 ___Zhenxian Huang___
